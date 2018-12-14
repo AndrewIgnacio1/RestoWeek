@@ -1,0 +1,21 @@
+<head>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+</head>
+
+<fieldset>
+  <h3>Edit a restaurant: {{resto.name}}</h3>
+  <form (submit)="update(resto._id)">
+    <br>
+    <br>
+    <div class="form-group row indent">
+      <p>Restaurant name: <input type="text" name="resto.name" [(ngModel)]="resto.name" placeholder="resto.name" /></p>
+      <p *ngIf="errors.name"> {{errors.name.message}}</p>
+    </div>
+    <div class="form-group row indent">
+      <p>Cuisine: <input type="text" name="resto.cuisine" [(ngModel)]="resto.cuisine" placeholder="resto.cuisine" /></p>
+      <p *ngIf="errors.style"> {{errors.cuisine.message}}</p>
+    </div>
+    <button class="btn btn-secondary indent" (click) = "cancel()">Cancel</button> <input class="btn btn-primary" type="submit" value="Edit"/>
+  </form>
+</fieldset>
+<br>

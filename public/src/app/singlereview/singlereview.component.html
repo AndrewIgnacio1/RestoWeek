@@ -1,0 +1,35 @@
+<head>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+</head>
+
+<div>
+  <h3>Write a review for {{resto.name}}</h3>
+
+  <fieldset>
+    <form (submit)="newRating(resto._id)">
+      <br>
+      <br>
+      <div class="form-group row indent">
+        <p>Your name: <input type="text" name="newreview.name" [(ngModel)]="newreview.name" /></p>
+        <p *ngIf="errors.name"> {{errors.name.message}}</p>
+      </div>
+
+      <p class="indent">Rating:
+         <select name="newreview.rating" [(ngModel)]="newreview.rating">
+           <option value="5">★★★★★</option>
+           <option value="4">★★★★☆</option>
+           <option value="3">★★★☆☆</option>
+           <option value="2">★★☆☆☆</option>
+           <option value="1">★☆☆☆☆</option>
+         </select>
+      </p>
+
+      <div class="form-group row indent">
+        <p>Cuisine: <input type="text" name="newreview.comment" [(ngModel)]="newreview.comment" /></p>
+        <p *ngIf="errors.style"> {{errors.cuisine.message}}</p>
+      </div>
+      <button class="btn btn-secondary indent" (click) = "cancel(resto._id)">Cancel</button> <input class="btn btn-primary" type="submit" value="Submit"/>
+    </form>
+  </fieldset>
+  <br>
+</div>
